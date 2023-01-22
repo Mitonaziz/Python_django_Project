@@ -4,28 +4,32 @@ from django.shortcuts import redirect #that means one when i use a id and locate
 
 job_title= [
     "First Job",
-    "Second Job"
+    "Second Job",
+    "Third job" 
     
 ]
 job_description=[
     "First job description ",
-    "Second job description"
+    "Second job description",
+    "Third job description"
 
 ]
-
-
-# Create your views here.
-def hello(requsest):
-    return HttpResponse("<h1>hello word</h1>")
-
-
-def jobdetail(requsest, id):
-  
-  
+def joblist(requsest):
+    #<ul><li>job 1</li> <li>job 2</li> <li>job 3</li>
    
-  
-  
- # return HttpResponse(f"<h1>Job details page {id}</h1>")
+    list_of_jobs = "<ul>"
+    for i in job_title :
+        job_id =job_title.index(i)
+        list_of_jobs += f"<li><a href='job/{job_id}'>{i}</a></li>"
+    list_of_jobs += "</ul>"
+    return HttpResponse(list_of_jobs)
+ 
+ # Create your views here.
+ #def hello(requsest):
+ #   return HttpResponse("<h1>hello word</h1>")
+#def jobdetail(requsest, id):
+    
+  # return HttpResponse(f"<h1>Job details page {id}</h1>")
     #make a site urls click
     site="https://google.com"
     return HttpResponse(f"visit <a href={site}>google here</a>")
