@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import redirect #that means one when i use a id and located anoter page 
+
 job_title= [
     "First Job",
     "Second Job"
@@ -15,7 +17,13 @@ job_description=[
 # Create your views here.
 def hello(requsest):
     return HttpResponse("<h1>hello word</h1>")
+
+
 def jobdetail(requsest, id):
+  
+  
+   
+  
   
  # return HttpResponse(f"<h1>Job details page {id}</h1>")
     #make a site urls click
@@ -26,11 +34,19 @@ def jobdetail(requsest, id):
 
 def jobnew(requsest,id):
     print (type (id)) #this id is string so we convert this id string to int
+   
+     
+    
     return_html = f"<h1>{job_title [int (id)]}</h1> <h3>{job_description[int (id)]} "
     return HttpResponse(return_html)
 
 def jobwork(requsest,id):
     print (type (id)) #this id is string so we convert this id string to int
+      
+    if id == 0:
+     return redirect("/")#/ meance home page 
+    
+    
     return_html = f"<h1>{job_title [id]}</h1> <h3>{job_description[ id]} "
     return HttpResponse(return_html)
 
