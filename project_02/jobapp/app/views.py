@@ -29,4 +29,11 @@ def jobnew(requsest,id):
     return_html = f"<h1>{job_title [int (id)]}</h1> <h3>{job_description[int (id)]} "
     return HttpResponse(return_html)
 
+def jobwork(requsest,id):
+    print (type (id)) #this id is string so we convert this id string to int
+    return_html = f"<h1>{job_title [id]}</h1> <h3>{job_description[ id]} "
+    return HttpResponse(return_html)
+
+
+
 #"<domain>/job/1" -->job detail page
