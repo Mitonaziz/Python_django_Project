@@ -1,6 +1,6 @@
 #operators
 # + - / * (**)power {//}
-numone = 2
-numtwo = 4
-mal = (numone * numtwo )
-print(mal)
+numone = 4
+numtwo = 2
+div = (numone / numtwo )
+print(div)
