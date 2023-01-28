@@ -1,0 +1,6 @@
+a = int(input("Enter 1st num = "))
+b = int(input("Enter 2nd num = "))
+power=((a+b)**2)
+poewer2=((a-b)**3)
+print("1st power valu = ",power)
+print("2nd power valu = ",poewer2)
